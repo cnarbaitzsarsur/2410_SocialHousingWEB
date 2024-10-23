@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+        
+        <title>Vienna social housing</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+        <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+
+        <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <main>
+
+            <!-- Sidebar -->
+            <div id="sidebar">
+
+                <div id="intro-sidebar">
+                    <section id="intro">
+                        <h1>X-RAY OF VIENNA SOCIAL HOUSING</h1>
+                        <h5> Vienna's social housing system is a world-renowned example. This interactive map explores its location, accessibility, and distribution across districts. </h5>
+
+                    </section>
+                    
+                    <section id="background">
+                        <h2> BACKGROUND </h2>
+                        <p id="textContent">
+                            By 1918, post-First World War, Vienna’s population was around two million. Inherited from the Habsburg Empire, severe housing shortages and deplorable living conditions persisted.
+                            Social housing initiatives began in 1919 with the victory of the Social Democratic Party. The period of Red Vienna (Rote Wien)(1919–1934) envisioned the non-commodified modern city as an emancipating project. This period gained momentum with Vienna's provincial status in 1922, which gave Vienna control over its own taxes. Tax reforms in 1923, by Hugo Breitner, allowed Vienna to buy land and properties to fund council housing projects. In 1923, the City Council aimed to build 25,000 flats in five years, completed by 1926. Another program in 1927 added 30,000 more. The focus was on creating healthy living conditions, coined "fresh air, light, and sunshine." 
+                            <span id="moreText">The Second World War destroyed 87,000 homes and priority was given to rebuilding. Between 1945 and 1960 close to 4,200 new municipal flats per year were constructed. Municipal and non-municipal sectors (co-operatives and associations) collaborated in housing production, with the latter erecting approx. 25 percent of all new dwellings. The reconstruction of Vienna was completed already before 1960. Council housing construction slowed in the 1970s, shifting towards public-private partnerships. In 1973, the number of flats completed by these partnerships exceeded that of municipal flats. This trend was influenced by the European Union’s regulation which limited public debt and investments making impossible to invest in social housing. Significant legislative reforms were made in the 1980s and 1990s, such as the liberalization of rent regulations and the establishment of the Housing Fund Vienna (Wohnfonds Wien) for managing municipal land and urban renewal subsidies. This subsidies offered low-interest loans to landlords in exchange for limited rents post-renovation. It also fostered tenant collaboration in building renovations to alleviate cultural and social displacement. Yet, the contemporary housing scene presents new challenges. The reliance on non-profit associations for social rental housing since 2004 underscores changing dynamics in housing provision, while the liberalization of rent regulations in the private market by the national government since 2010 has reshaped the balance between social and private housing sectors, particularly in the context of heightened migration and refugee influxes.
+                            </span>
+                        </p>
+                        <button class="red-btn" id="readMoreBtn">Keep Reading</button>
+                    </section>
+
+                    <button class="white-btn" id="BtnToMap"> To the map</button>
+
+                    <section id="footer">
+                        <p> by Camila Narbaitz Sarsur</p>
+                        <p><a href="http://www.cnscartography.com" target="_blank">www.cnscartography.com</a></p>
+                    </section>
+                </div>
+
+                <div id="map-sidebar" style="display: none;">
+                    <section id="intro">
+                        <h1>X-RAY OF VIENNA SOCIAL HOUSING</h1>
+                    </section>
+                    
+                    <div id="historySection">
+                        <h2 id="historyTitle">HISTORICAL ANALYSIS</h2>
+
+                        <section class = "propertiesHistory">
+                            <div>
+                                <h4>SOCIAL HOUSING BUILDINGS</h4>
+                                <p>Click on the highlighted red social housing buildings to reveal detailed information about each one.</p>
+                            </div>
+
+                            <h4>HOUSING CONSTRUCTION YEAR</h4>
+                            <p>Move the slider and see the development of social housing in Vienna</p>
+                            <div class="year-slider">
+                                <input type="range" id="yearSlider" min="1900" max="2004" value="2004" step="1">
+                                <span id="selectedYear">2004</span>
+                            </div>
+                            
+                            <h3 id="unitsConstructedText">
+                                In  <span class="highlighted-text" id="constructedYear">2023</span><br>
+                                <span class="highlighted-text" id="constructedUnits">X</span>
+                                new social housing units <br> 
+                                were constructed
+                            </h3>
+
+                            <p>*in 2004, the entire subsidised housing segment was transferred from the City of Vienna to non-profit and limited-profit housing developers. 
+                            </p>
+                        </section>
+                    </div>
+
+                    <div id="proximitySection">
+                        
+                        <h2 id="proximityTitle">PROXIMITY ANALYSIS</h2>
+                        
+                        <section class="properties">
+                            
+                            <div class="field">
+                                <h4>AREA COVERED BY GREEN SPACES
+                                    <button title="Explanation" class="question-button">
+                                        <img src="svg/question-circle.svg" alt="question mark" width="20" height="20">
+                                    </button>
+                                </h4>
+                                
+                                <div class="slider">
+                                    <p>Big Green spaces</p>
+                                    <span style="width: 1rem;"></span>
+                                    <input id="big-green-coverage" type="range" min="0" max="800" step="100">
+                                    <label for="big-green-coverage" style="left: -2rem;">
+                                        <mark id="big-buffer-distance">0m</mark>
+                                    </label>
+                                </div>
+
+                                <div class="slider">
+                                    <p>Medium Green Spaces</p>
+                                    <input id="medium-green-coverage" type="range" min="0" max="400" step="100" value="0">
+                                    <label for="medium-green-coverage">
+                                        <mark id="medium-buffer-distance">0m</mark>
+                                    </label>
+                                </div>
+                                
+                                <div class="slider">
+                                    <p>Small Green Spaces</p>
+                                    <input id="small-green-coverage" type="range" min="0" max="200" step="50" value="0">
+                                    <label for="small-green-coverage">
+                                        <mark id="small-buffer-distance">0m</mark>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <h4>AREA COVERED BY PUBLIC TRANSPORT
+                                    <button title="Explanation" class="question-button">
+                                        <img src="svg/question-circle.svg" alt="question mark" width="20" height="20">
+                                    </button>
+                                </h4>
+                                
+                                <div class="slider">
+                                    <p>Bus Stops</p>
+                                    <span style="width: 1rem;"></span>
+                                    <input id="bus-buffer" type="range" min="0" max="400" step="100" value="0">
+                                    <label for="bus-buffer">
+                                        <mark id="bus-buffer-distance">0m</mark>
+                                    </label>
+                                </div>
+                            
+                                <div class="slider">
+                                    <p>U-Bahn Stops</p>
+                                    <input id="ubahn-buffer" type="range" min="0" max="800" step="100" value="0">
+                                    <label for="ubahn-buffer">
+                                        <mark id="ubahn-buffer-distance">0m</mark>
+                                    </label>
+                                </div>
+                            </div>
+                        </section>
+                    </div>    
+
+                    <section id="footer">
+                        <p> Explore the complete PDF version, co-authored with Mihir Desai for Jornal Arquitetos here:</p>
+                        <p><a href="/pdf/J-A_mapping.pdf" target="_blank">AN X-RAY OF VIENNA'S SOCIAL HOUSING</a></p>
+                    </section>
+                    
+                </div>
+
+            </div>
+
+
+            <!-- View Toggle -->
+            <div id="viewToggle">
+                <button id="infoBtn">INFO</button>
+                <button id="mapViewBtn">MAP</button>
+                <button id="districtsViewBtn">DISTRICTS</button>
+            </div>
+
+            
+            <!-- Map View -->
+            <div id="map" class="map">
+                <div id="loading-spinner" class="loading-spinner" class="spinner"></div>
+            </div>
+
+            <!-- Districts View -->
+            <div id="districtsView" class="districts-view" style="display: none;">
+                <section>
+                        
+                    <section class="radarExplanation">
+                        <img src="svg/reference.svg" alt="District Reference">
+                        <section>
+                            <h2>District Radar Graphs</h2>
+                            <p>These 23 radar graphs compare Vienna's districts, highlighting various key factors and offering
+                                a holistic view of their urban characteristics. Despite Vienna's well-distributed social housing,
+                                contributing to a diverse social and cultural mix, disparities still exist among districts.</p>
+                        </section>
+                    </section>
+                    <section id="radarGraphs">
+                        <img src="svg/d1.svg" alt="District Reference">
+                        <img src="svg/d2.svg" alt="District Reference">
+                        <img src="svg/d3.svg" alt="District Reference">
+                        <img src="svg/d4.svg" alt="District Reference">
+                        <img src="svg/d5.svg" alt="District Reference">
+                        <img src="svg/d6.svg" alt="District Reference">
+                        <img src="svg/d7.svg" alt="District Reference">
+                        <img src="svg/d8.svg" alt="District Reference">
+                        <img src="svg/d9.svg" alt="District Reference">
+                        <img src="svg/d10.svg" alt="District Reference">
+                        <img src="svg/d11.svg" alt="District Reference">
+                        <img src="svg/d12.svg" alt="District Reference">
+                        <img src="svg/d13.svg" alt="District Reference">
+                        <img src="svg/d14.svg" alt="District Reference">
+                        <img src="svg/d15.svg" alt="District Reference">
+                        <img src="svg/d16.svg" alt="District Reference">
+                        <img src="svg/d17.svg" alt="District Reference">
+                        <img src="svg/d18.svg" alt="District Reference">
+                        <img src="svg/d19.svg" alt="District Reference">
+                        <img src="svg/d20.svg" alt="District Reference">
+                        <img src="svg/d21.svg" alt="District Reference">
+                        <img src="svg/d22.svg" alt="District Reference">
+                        <img src="svg/d23.svg" alt="District Reference">
+                    </section>
+                </section>
+            </div>
+            
+            
+        </main>
+        
+        <!-- Map View (Default)-->
+        <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+        <script type="module" src="./js/main.js"></script>
+
+    </body>   
+</html>

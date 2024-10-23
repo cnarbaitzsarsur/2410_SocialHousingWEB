@@ -1,0 +1,623 @@
+html, body {
+    height: 100%; /* Ensures the entire page fills the viewport */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+}
+
+main {
+    height: 100%;
+    display: flex; /* Enables flex properties for the main container */
+    flex: 1; /* Takes up all available space after header */
+    padding: 0;
+    position: relative; /* Establishes positioning context */
+    font-family: "Poppins", sans-serif;
+}
+
+#sidebar {
+    position: relative;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 2rem;
+    color: white;
+    background-color: #CF2026;
+    box-shadow: .8rem 0 .8rem rgba(0, 0, 0, .03), .4rem 0 .4rem rgba(0, 0, 0, .03), .2rem 0 .2rem rgba(0, 0, 0, .03);
+    transition: max-width .5s ease-in-out;
+    z-index: 200;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+    text-align: center; 
+
+}
+
+#intro-sidebar {
+    display: block;
+    padding: 1rem;
+}
+
+#historySection{
+    margin: 3em 0em 2em 0em;
+}
+
+#historyTitle {
+    cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.properties {
+    display: none;
+}
+
+#proximitySection {
+    margin: 1rem 0;
+}
+
+#proximityTitle {
+    cursor: pointer;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+#proximityTitle:hover, #historyTitle:hover {
+opacity: 50%;
+}
+
+section.collapsible {
+    max-height: 0; /* Start collapsed */
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+section.expanded {
+    max-height: 1000px; /* Adjust depending on content size */
+    opacity: 1;
+}
+
+#footer{
+    text-align: center; /* Center the text in the middle horizontally */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 2.5rem;
+}
+
+#footer p{
+    text-align: center; 
+}
+
+#footer p a{
+    color: white;
+    font-weight: 400;
+}
+
+/* Hide the sidebar by default */
+#map-sidebar, #districts-sidebar {
+    display: none;
+}
+
+
+#background{
+    margin-top: 4em;
+}
+
+
+.question-button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 5px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.question-button img {
+    width: 1em; /* Scale the icon to match the text */
+    height: 1em;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(360deg) brightness(100%) contrast(100%);
+}
+
+.question-button:hover img {
+    filter: brightness(1.2); /* Optional: lighten the icon on hover */
+}
+
+/* TEXTS */
+
+h1 {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+h2{
+    margin-block-end: 0.4em;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 600;
+
+}
+
+h3{
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+h4{
+    margin-block-end: 0.4em;
+    text-align: left;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-top: 3em;
+}
+
+
+p {
+    font-size: 0.7em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    text-align: left;
+}
+
+.properties .field p{
+    font-size: 0.8em;
+}
+
+h5{
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 3em;
+    font-weight: 300;
+    margin: 3em;
+    margin: 2em 2.5em;
+}
+
+#unitsConstructedText{
+    margin-bottom: 2em;
+}
+
+.highlighted-text {
+    background-color: white;
+    color: #CF2026;
+    padding: 0.3em; 
+    border-radius: 0.3em; 
+    display: inline-block;
+    font-size: 1.5em; 
+    font-weight: bold; 
+    width: 3em;
+    height: 1.3em;
+}
+
+.swal2-title-custom{
+    padding-top: 2em;
+    color: white;
+    font-size: 18px;
+}
+.swal2-text-custom ul {
+    font-size: 0.8em; 
+    font-weight: 200;
+    line-height: 1.5; 
+    padding-left: 1em;
+    text-align: left;
+    color: white;
+}
+
+.swal2-html-container{
+    padding: 1em;
+}
+
+
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+.sidebar .map-sidebar {
+    position: relative;
+    box-sizing: border-box;
+    max-width: 25rem;
+    min-height: 100%;
+    padding-bottom: 27.1rem;
+}
+
+#intro {
+    margin-bottom: .8rem;
+    padding-top: 2.4rem;
+    text-align: center;
+}
+
+#moreText {
+    display: none; /* Hide the extra text initially */
+}
+
+
+#map {
+    flex: 1; /* Allows the map to take up the remaining space*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position:relative;
+}
+
+#districtsView {
+    flex: 1; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: auto; /* Allow content to determine height */
+    width: 100%;
+    position: relative;
+    padding: 1rem;
+    margin-top: 7%;
+    overflow: auto; /* Enable scrolling if needed */
+    
+}
+
+.radarExplanation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.radarExplanation img {
+    width: 50%;
+    height: auto;
+    margin-right: 2rem; /* Space between the image and the text */
+}
+
+.radarExplanation p {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+#radarGraphs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-gap: 1rem; /* Space between the images */
+    margin-top: 1rem;
+}
+
+#radarGraphs img {
+    width: 90%; 
+    height: auto;
+    padding: 1rem; /* Optional: Padding inside radar graphs */
+}
+
+@media (max-width: 768px) {
+    .radarExplanation {
+        flex-direction: column; /* Stack image and text on smaller screens */
+        align-items: flex-start;
+    }
+
+    .radarExplanation img {
+        margin-bottom: 10px;
+    }
+
+    #radarGraphs {
+        grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #radarGraphs {
+        grid-template-columns: 1fr; /* Switch to 1 column on extra small screens */
+    }
+}
+
+#viewToggle {
+    display: inline-block;
+    position: absolute;
+    top: 5%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    outline: 0.2rem solid #CF2026; 
+    transition: opacity 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+#viewToggle button {
+    background: white;
+    color: #CF2026;
+    border: none;
+    padding: .5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+
+#viewToggle button:hover {
+    opacity: 50%;
+}
+
+#viewToggle button.active {
+    background: #CF2026;
+    color: white
+}
+
+#viewToggle.hidden {
+    opacity: 0;
+}
+
+
+
+
+
+#form-sidebar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #CF2026;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: .8rem 0 .8rem rgba(0, 0, 0, .03), .4rem 0 .4rem rgba(0, 0, 0, .03), .2rem 0 .2rem rgba(0, 0, 0, .03);
+    z-index: 9999; /* Make sure it's on top of the map */
+    display: none; /* Initially hidden */
+    width: 20rem; /* Adjust as needed */
+    color: white;
+}
+
+
+
+#closeFormBtn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color:white;
+}
+
+.form-group {
+    margin: 2rem 1rem ;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: medium;
+}
+
+select, input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari */
+}
+
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari */
+}
+
+.error-message {
+    color: #9b1c1f;
+    font-size: 0.875em;
+}
+
+.submit-btn {
+    background-color: white;
+    color: #9b1c1f;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transitions */
+}
+
+.submit-btn:hover {
+    background-color: #9b1c1f;
+    color: white;
+    border: 2px; 
+    border-color: white;
+}
+
+/* Style for the loading spinner */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    z-index: 1000; /* Ensure it’s on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 8px;
+}
+
+/* Spinner animation */
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.mapboxgl-popup-content {
+    background: #CF2026;
+    border-radius: 1em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+    padding: 1em;
+    pointer-events: auto;
+    position: relative;
+    color: white;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip  {
+    border-top-color: #CF2026;
+}
+
+.mapboxgl-popup-close-button {
+    color: white;
+}
+
+.mapboxgl-popup-content a {
+    color: #ffffff; /* White color for the link */
+    font-weight: bold; /* Bold font for the link */
+    text-decoration: underline; /* Optional: underline the link */
+}
+
+.mapboxgl-popup-content a:hover {
+    color: #ffcccc; /* Optional: lighter color on hover */
+}
+
+/*BUTTON*/
+
+.white-btn {
+    background-color: white;
+    color: #CF2026;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 0.8em;
+    font-size: 1em;
+    margin-top: 3em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transitions */
+
+}
+.white-btn:hover {
+    background-color: #CF2026;
+    color: white;
+    border: 2px; 
+    border-color: white;
+}
+
+.red-btn {
+    background-color: #CF2026;
+    color: white;
+    border: none;
+    outline: 2px solid white; /* Add an outline with color and thickness */
+    padding: 10px 15px;
+    border-radius: 0.8em;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border 0.3s; /* Smooth transitions */
+    margin-left: 0; /* Remove any default margin */
+    display: block; /* Make it a block element */
+    text-align: left; /* Align text inside the button to the left */
+}
+
+.red-btn:hover {
+    background-color: white;
+    color:#CF2026;
+}
+
+/*SLIDER*/
+
+.year-slider {
+    display: flex;
+    align-items: center; /* Aligns the items vertically in the center */
+    gap: 1rem; /* Space between elements */
+    width: 23rem;
+    height: 2rem;
+    font-size: 0.8em;
+    margin: 3em 0 3em 0;
+}
+
+.slider {
+    display: flex;
+    align-items: center; /* Aligns the items vertically in the center */
+    gap: 1rem; /* Space between elements */
+    width: 23rem;
+    height: 2rem;
+    font-size: 0.8em;
+    margin: 2em 0 2em 0;
+}
+
+.slider, .year-slider label{
+    margin-left: 0.5rem; /* Adds space between the slider and the label */
+    font-size: 1rem; /* Adjusts font size */
+}
+
+mark {
+    background-color: transparent; /* Removes the default background of mark */
+    color: white; /* Sets the text color */
+}
+
+/* General reset */
+input[type="range"] {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ddd; /* Background color of the slider track */
+    border-radius: 5px;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    height: 0.7em;
+}
+
+/* Custom thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
+    background: #CF2026; /* Thumb color */
+    border-radius: 50%; /* Make the thumb round */
+    cursor: pointer;
+    margin-top: -6px; /* Adjust the position of the thumb */
+    outline: 2px solid white;
+}
+
+#districts-sidebar {
+    position: fixed;
+    width: 25rem;
+    height: 100%;
+    background: #f0f0f0;
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%); /* Start hidden off-screen */
+}
+
+#districts-sidebar.active {
+    transform: translateX(0); /* Slide in when active */
+}
+
+.district {
+    margin: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.district-svg {
+    max-width: 100%;
+    height: auto;
+}

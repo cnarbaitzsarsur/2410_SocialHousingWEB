@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105.04 90.22">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-6, .cls-4, .cls-5 {
+        stroke-width: .3px;
+      }
+
+      .cls-1, .cls-3, .cls-6, .cls-7, .cls-4, .cls-5 {
+        stroke: #010101;
+      }
+
+      .cls-1, .cls-8 {
+        fill: #f8d1d4;
+      }
+
+      .cls-9 {
+        letter-spacing: -.01em;
+      }
+
+      .cls-10 {
+        font-size: 3.6px;
+      }
+
+      .cls-11, .cls-12, .cls-13, .cls-14, .cls-4 {
+        fill: #9b1c1f;
+      }
+
+      .cls-15 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-15, .cls-16 {
+        font-size: 5.4px;
+      }
+
+      .cls-2 {
+        stroke: #bd2026;
+      }
+
+      .cls-2, .cls-3, .cls-6, .cls-7 {
+        fill: none;
+      }
+
+      .cls-17 {
+        letter-spacing: -.16em;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 0 .91 .91;
+        stroke-width: .5px;
+      }
+
+      .cls-18 {
+        letter-spacing: 0em;
+      }
+
+      .cls-8, .cls-19, .cls-12 {
+        font-size: 6px;
+      }
+
+      .cls-8, .cls-19, .cls-12, .cls-13 {
+        font-family: L10-Regular, L10;
+      }
+
+      .cls-19 {
+        fill: #010101;
+      }
+
+      .cls-20 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-7 {
+        stroke-width: .08px;
+      }
+
+      .cls-21 {
+        letter-spacing: 0em;
+      }
+
+      .cls-22 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-14 {
+        opacity: .6;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="radar-graphs">
+    <g>
+      <circle class="cls-11" cx="95.85" cy="55.21" r="2.05"/>
+      <path class="cls-1" d="m86.48,55.16c0,19.27-15.62,34.9-34.89,34.9h-.01c-19.27,0-34.9-15.62-34.9-34.89"/>
+      <path class="cls-4" d="m67.03,55.17c0,8.53-6.92,15.45-15.45,15.46h0c-8.53,0-15.45-6.92-15.46-15.45"/>
+      <g>
+        <path id="_10000" data-name="10000" class="cls-7" d="m5.96,55.16C5.96,29.97,26.38,9.55,51.58,9.55s45.61,20.42,45.61,45.61H5.96Z"/>
+        <path id="_9000" data-name="9000" class="cls-7" d="m10.69,55.16c0-22.58,18.31-40.89,40.89-40.89s40.89,18.31,40.89,40.89"/>
+        <path id="_8000" data-name="8000" class="cls-7" d="m15.14,55.16c0-20.12,16.31-36.44,36.44-36.44s36.44,16.31,36.44,36.44"/>
+        <path id="_7000" data-name="7000" class="cls-7" d="m19.59,55.16c0-17.67,14.32-31.99,31.99-31.99s31.99,14.32,31.99,31.99"/>
+        <path id="_6000" data-name="6000" class="cls-7" d="m24.32,55.16c0-15.05,12.2-27.26,27.26-27.26s27.26,12.2,27.26,27.26"/>
+        <path id="_5000" data-name="5000" class="cls-7" d="m28.77,55.16c0-12.6,10.21-22.81,22.81-22.81s22.81,10.21,22.81,22.81"/>
+        <path id="_4000" data-name="4000" class="cls-7" d="m33.5,55.16c0-9.98,8.09-18.08,18.08-18.08s18.08,8.09,18.08,18.08h-36.16Z"/>
+        <path id="_3000" data-name="3000" class="cls-7" d="m37.95,55.16c0-7.53,6.1-13.63,13.63-13.63s13.63,6.1,13.63,13.63h-27.26Z"/>
+        <path id="_2000" data-name="2000" class="cls-7" d="m42.4,55.16c0-5.07,4.11-9.18,9.18-9.18s9.18,4.11,9.18,9.18h-18.36Z"/>
+        <path id="_1000" data-name="1000" class="cls-7" d="m47.13,55.16c0-2.46,1.99-4.45,4.45-4.45s4.45,1.99,4.45,4.45"/>
+        <line class="cls-6" x1="51.58" y1="55.16" x2="51.58" y2="5.1"/>
+        <line class="cls-6" x1="51.58" y1="55.16" x2="16.17" y2="19.76"/>
+        <line class="cls-6" x1="51.58" y1="55.16" x2="86.98" y2="19.76"/>
+        <path id="_10000-2" data-name="10000" class="cls-7" d="m1.49,55.16C1.49,27.46,23.95,5,51.66,5s50.16,22.46,50.16,50.16H1.49Z"/>
+        <line class="cls-6" x1="1.49" y1="55.17" x2="101.71" y2="55.17"/>
+      </g>
+      <text class="cls-8" transform="translate(40.49 62.9)"><tspan x="0" y="0">86</tspan><tspan class="cls-17" x="7.06" y="0">7</tspan><tspan x="9.36" y="0">.3 ha</tspan></text>
+      <text class="cls-12" transform="translate(39.93 80.69)"><tspan x="0" y="0">118 p/ha</tspan></text>
+      <path class="cls-14" d="m2.05,55.16s4.2-28.89,15.49-34.04c9.05-4.13,22.23,6.41,34.04,9.78,5.1,1.46,12.01,3.9,19.73,4.55,7.53.64,24.55,19.76,24.55,19.76"/>
+      <path class="cls-2" d="m2.05,55.16s4.2-28.89,15.49-34.04c9.05-4.13,22.23,6.41,34.04,9.78,5.1,1.46,12.01,3.9,19.73,4.55,7.53.64,24.55,19.76,24.55,19.76"/>
+      <circle class="cls-11" cx="51.55" cy="30.9" r="2.05"/>
+      <circle class="cls-11" cx="71.3" cy="35.46" r="2.05"/>
+      <circle class="cls-11" cx="17.54" cy="21.13" r="2.05"/>
+      <circle class="cls-11" cx="2.05" cy="55.21" r="2.05"/>
+      <g>
+        <path class="cls-3" d="m7.89,55.04c-.11-21.46,5.46-31.14,10.12-33.3,6.82-3.17,15.69,9.11,33.56,9.93,12.54.57,14.69-1.34,22.38,1.11,5.73,1.83,14.49,14.02,16.61,22.27"/>
+        <circle class="cls-5" cx="51.58" cy="31.72" r="1.16"/>
+        <circle class="cls-5" cx="73.95" cy="32.65" r="1.16"/>
+        <circle class="cls-5" cx="90.49" cy="55.04" r="1.16"/>
+        <circle class="cls-5" cx="18.01" cy="21.73" r="1.16"/>
+        <circle class="cls-5" cx="7.89" cy="55.04" r="1.16"/>
+      </g>
+      <text class="cls-12" transform="translate(87.52 61.97)"><tspan x="0" y="0">4</tspan><tspan class="cls-9" x="3.42" y="0">8</tspan><tspan class="cls-18" x="6.93" y="0">.2%</tspan></text>
+      <text class="cls-13" transform="translate(74.38 39.22)"><tspan class="cls-16" x="0" y="0">12</tspan><tspan class="cls-15" x="5.46" y="0">.</tspan><tspan class="cls-16" x="6.61" y="0">4</tspan><tspan class="cls-10" x="9.69" y="0">€/m2</tspan></text>
+      <text class="cls-12" transform="translate(5.99 19.07)"><tspan x="0" y="0">9</tspan><tspan class="cls-22" x="3.49" y="0">6</tspan><tspan class="cls-18" x="6.86" y="0">.3%</tspan></text>
+      <text class="cls-12" transform="translate(0 61.97)"><tspan x="0" y="0">9</tspan><tspan class="cls-21" x="3.49" y="0">8</tspan><tspan x="7" y="0">.6%</tspan></text>
+      <text class="cls-12" transform="translate(52.74 27.91)"><tspan x="0" y="0">3</tspan><tspan class="cls-22" x="3.53" y="0">4</tspan><tspan class="cls-20" x="6.83" y="0">.</tspan><tspan x="7.93" y="0">7%</tspan></text>
+      <text class="cls-19" transform="translate(2.49 5.1)"><tspan x="0" y="0">District 16</tspan></text>
+    </g>
+  </g>
+</svg>
