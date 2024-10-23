@@ -40,4 +40,4 @@ Camila Narbaitz Sarsur
 [www.cnscartography.com](http://www.cnscartography.com)
 
 ## License
-
+The visual content and documentation are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
