@@ -10,8 +10,7 @@ An interactive web visualization exploring Vienna's renowned social housing syst
   - Green spaces (different sizes)
   - Public transportation (bus and U-Bahn stops)
 - **District Comparison:** View radar graphs comparing 23 districts across multiple urban characteristics
-- **Responsive Design:** Optimized for both desktop and mobile viewing
-
+  
 ## Technical Stack
 
 - Mapbox GL JS for interactive mapping
